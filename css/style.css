@@ -20,6 +20,7 @@ p {
 .TableData {
     border-collapse: collapse;
     color: #ffffff;
+    background: #21252b;
 
     border-radius: 5px;
     box-shadow: 0 0 4px rgb(255, 255, 255);
@@ -70,10 +71,9 @@ p {
 .item1{
     background: #21252b;
     padding: 2px 5px;
-    
-
 
 }
+
 .item2{
     border-radius: 10px;
     box-shadow: 0 0 4px rgb(255, 255, 255);
