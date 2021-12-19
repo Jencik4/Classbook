@@ -6,8 +6,6 @@ const HelpTableRoot = document.querySelector("#HelpTableRoot");
 const TableRoot = document.querySelector("#TableRoot");
 const InputedTableFile = document.querySelector("#InputedTableFile"); // only .csv, .xlsx, .txt
 const select = document.querySelector("#floatingSelect");
-const InputedTableFile2 = document.querySelector("#InputedTableFile2"); // only .csv, .xlsx, .txt
-const select2 = document.querySelector("#floatingSelect2");
 
 const TableRootTabularOutput = document.querySelector("#TableRootTabularOutput"); // only .csv, .xlsx, .txt
 const TableRootTabularOutput2 = document.querySelector("#TableRootTabularOutput2"); // only .csv, .xlsx, .txt
@@ -69,18 +67,6 @@ select.addEventListener("change", (e) => {
     }
   });
 
-select2.addEventListener("change", (e) => {
-    var type = select2.value;
-    if (type==".csv"){
-      InputedTableFile2.accept = ".csv";
-    }
-    else if (type==".xlsx"){
-      InputedTableFile2.accept = ".xlsx";
-    }
-    else if (type==".txt"){
-      InputedTableFile2.accept = ".txt";
-    }
-  });
 
 InputedTableFile.addEventListener("change", (e) => { 
     let fileName = InputedTableFile.files[0].name;
@@ -120,12 +106,12 @@ InputedTableFile.addEventListener("change", (e) => {
     }
 });
 
-InputedTableFile2.addEventListener("change", (e) => {
-    let fileName = InputedTableFile2.files[0].name;
+InputedTableFile.addEventListener("change", (e) => {
+    let fileName = InputedTableFile.files[0].name;
     console.log(fileName);
 
-    if (select2.value==".csv") {
-        Papa.parse(InputedTableFile2.files[0], {
+    if (select.value==".csv") {
+        Papa.parse(InputedTableFile.files[0], {
             delimiter: ";",
             skipEmptyLines: true,
             complete: (results) => {
@@ -171,8 +157,8 @@ InputedTableFile2.addEventListener("change", (e) => {
                 chartDisciplines.update();
               }
         });
-    } else if (select2.value==".xlsx") {
-        readXlsxFile(InputedTableFile2.files[0]).then((data) => {
+    } else if (select.value==".xlsx") {
+        readXlsxFile(InputedTableFile.files[0]).then((data) => {
             let classesNames = [];
             let classes = [];
             let StudentsData = data.slice(1);
@@ -215,8 +201,8 @@ InputedTableFile2.addEventListener("change", (e) => {
             chartDisciplines.update();
         });
     }
-    else if (select2.value==".txt") {
-        const file = InputedTableFile2.files[0];
+    else if (select.value==".txt") {
+        const file = InputedTableFile.files[0];
 
         let reader = new FileReader();
         reader.onload = (e) => {
