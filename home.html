@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КClassBook</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body class="body">
+    <!-- Nav tabs -->
+    <div class="item2">
+    <ul class="nav nav-pills " id="myTab" role="tablist">
+        <li>
+          <div class="item1">
+             <img src="./Images/logo.png" class="img-fluid" alt="Responsive image" width="42" height="32">
+          </div>
+        </li>
+        <li class="nav-item " role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#load" type="button"
+                role="tab" aria-controls="load" aria-selected="true">Главная</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tabular-statistic-tab" data-bs-toggle="tab" data-bs-target="#tabular-output" type="button"
+                role="tab" aria-controls="tabular-output" aria-selected="false">Табличная статистика</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="graphical-statistic-tab" data-bs-toggle="tab" data-bs-target="#graphical-output" type="button"
+                role="tab" aria-controls="graphical-output" aria-selected="false">Графическая статистика</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="help-tab" data-bs-toggle="tab" data-bs-target="#help" type="button"
+                role="tab" aria-controls="help" aria-selected="false">Помощь</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="devoloper-tab" data-bs-toggle="tab" data-bs-target="#devoloper" type="button"
+                role="tab" aria-controls="about" aria-selected="false">О разработчике</button>
+        </li>
+    </ul>
+     </div>
+    <!-- Tab panes -->
+    
+    <div class="tab-content">
+        <div class="tab-pane active" id="load" role="tabpanel" aria-labelledby="home-tab">
+
+          <div class="container-fluid" >
+            <div class="row">
+
+              <div class="col-sm-3" >
+                <div class="item">
+                  <div class="mb-3">
+                    <br>
+
+                    <div class="form-floating">
+                      <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option value=".csv">".csv"</option>
+                        <option value=".xlsx">".xlsx"</option>
+                        <option value=".txt">".txt"</option>
+                      </select>
+                      <label for="floatingSelect">Загрузить файл типа:</label>
+                    </div>
+                    <br>
+
+
+                    <input class="form-control" type="file" id="InputedTableFile" accept=".csv" >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <table class="TableData table-bordered table-striped " id="TableRoot"></table>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tab-pane" id="tabular-output" role="tabpanel" aria-labelledby="tabular-statistic-tab">
+
+          <div class="container-fluid" >
+            <div class="row">
+
+              <div class="col-sm-3" >
+                <div class="item">
+                  <div class="mb-3">
+                    <br>
+
+                    <div class="form-floating">
+                      <select class="form-select" id="floatingSelect2" aria-label="Floating label select example">
+                        <option value=".csv">".csv"</option>
+                        <option value=".xlsx">".xlsx"</option>
+                        <option value=".txt">".txt"</option>
+                      </select>
+                      <label for="floatingSelect2">Загрузить файл типа:</label>
+                    </div>
+                    <br>
+
+                    <input class="form-control" type="file" id="InputedTableFile2" accept=".csv" >
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <table class="TableData table-bordered table-striped" id="TableRootTabularOutput"></table>
+                 <br>
+                <table class="TableData table-bordered table-striped" id="TableRootTabularOutput2"></table>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane" id="graphical-output" role="tabpanel" aria-labelledby="graphical-statistic-tab">
+          <p>
+            <canvas id="bar-chart-grouped-classes" width="800" height="450"></canvas>
+          </p>
+          <p>
+            <canvas id="bar-chart-grouped-disciplines" width="800" height="450"></canvas>
+          </p>
+        </div>
+
+          <div class="tab-pane" id="help" role="tabpanel" aria-labelledby="help-tab">
+            <div class="item3">
+              <table id="HelpTableRoot" class="TableData table-bordered table-striped"></table>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="devoloper" role="tabpanel" aria-labelledby="devoloper-tab">
+            <div class="row">
+                  <div class="col">
+                      <div id="about-text"">                        
+                          <p class="fs-2 fst-italic">
+                              Создатель сайта: 
+                              Кулебакин Евгений Дмитриевич, студент группы ИА-031
+
+                          </p>
+                      </div>                          
+                  </div>
+                      <img src="./Images/Cat.jpg" alt="image" class="img-fluid " width="300" height="300">
+                  </div>
+              </div>
+            
+        </div>
+    </div>
+
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!-- Required to work with the extension .csv -->
+    <script src="./JavaScript/papaparse.min.js"></script>
+    <!-- Required to work with the extension .xlsx -->
+    <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
+    <!-- Required for working with graphs -->
+    <script src="./JavaScript/charts.min.js"></script>
+    <script type="module" src="./JavaScript/main.js"></script>
+</body>
+
+</html>

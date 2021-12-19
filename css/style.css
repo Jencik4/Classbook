@@ -1,0 +1,107 @@
+#about-text {
+    left: 15px;
+    padding: 10px 20px;
+    top: 50%;
+    color: #ffffff;
+
+}
+
+.tab-content {
+    
+    position: relative;
+    top: 15px;
+}
+
+p {
+    max-width: 900px;
+}
+
+/* Styles for the Table */
+.TableData {
+    border-collapse: collapse;
+    color: #ffffff;
+
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgb(255, 255, 255);
+    overflow: hidden;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.TableData th {
+    background: #021164;
+    color: #ffffff;
+    text-align: left;
+}
+
+.TableData th,
+.TableData td {
+    padding: 10px 20px;
+}
+
+/* 
+    The pseudo-class :nth-child is used to add a style to elements based on the numbering in the element tree 
+    even - all even elements
+*/
+
+.body {
+    background: #363636;
+
+}
+.form-floating .form-select,.form-control{
+    background: #353b45;
+    color:rgb(255, 255, 255);
+    border-radius: 10px;
+
+}
+
+.item{
+    background: #21252b;
+    min-height: 300px;
+    max-height: 300px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgb(255, 255, 255);
+
+
+
+}
+.item1{
+    background: #21252b;
+    padding: 2px 5px;
+    
+
+
+}
+.item2{
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgb(255, 255, 255);
+}
+.item3{
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+label{
+    color:rgb(255, 255, 255);
+
+}
+.nav {
+    background: #21252b;
+    padding: 5px 5px;
+
+
+
+}
+.nav-pills {
+    background: #21252b;
+    padding: 5px 5px;
+
+
+}
+.collapse .ul .li .a {
+    color: #ff0000;
+}
+.custom > li > a:hover {
+    color: rgb(255, 0, 0);
+}
